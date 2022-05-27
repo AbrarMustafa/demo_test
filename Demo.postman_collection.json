@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "3c9c9dde-129f-4737-ab15-f5c5834796ac",
+		"name": "Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "provider",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"provider_id\":2,\n    \"name\":\"tejst\",\n    \"email\":\"test@test1.com\",\n    \"phone_number\":\"9944545445\",\n    \"language\":\"english\",\n    \"currency\":\"usd\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://159.223.189.221:8000/api/providers/",
+					"protocol": "http",
+					"host": [
+						"159",
+						"223",
+						"189",
+						"221"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"providers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "service",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"service_id\":1,\n    \"provider_id\":3,\n    \"name\":\"asdf\",\n    \"price\":344,\n    \"geojson\":{ \"type\": \"Polygon\", \"coordinates\": [ [ [100.0, 0.0], [101.0, 0.0], [101.0, 1.0], [100.0, 1.0], [100.0, 0.0] ]]},\n    \"information\":\"asdfsfsdf\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://159.223.189.221:8000/api/service_area/",
+					"protocol": "http",
+					"host": [
+						"159",
+						"223",
+						"189",
+						"221"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"service_area",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "specific_endpoint",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"service_id\":3,\n    \"provider_id\":3,\n    \"name\":\"asdf\",\n    \"price\":34,\n    \"geojson\":{ \"type\": \"Polygon\", \"coordinates\": [ [ [100.0, 0.0], [101.0, 0.0], [101.0, 1.0], [100.0, 1.0], [100.0, 0.0] ]]},\n    \"information\":\"asdfsfsdf\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://159.223.189.221:8000/api/specific_to_polygon/?lat=33&lng=33",
+					"protocol": "http",
+					"host": [
+						"159",
+						"223",
+						"189",
+						"221"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"specific_to_polygon",
+						""
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "33"
+						},
+						{
+							"key": "lng",
+							"value": "33"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
